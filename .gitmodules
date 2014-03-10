@@ -1,0 +1,3 @@
+[submodule "fw/dcmotor/lib/libopencm3"]
+	path = fw/dcmotor/lib/libopencm3
+	url = https://github.com/BuFran/libopencm3
