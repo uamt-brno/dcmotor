@@ -21,7 +21,7 @@
 static void gpio_setup(void)
 {
 	rcc_periph_clock_enable(RCC_GPIOD);
-	gpio_mode_setup(GPIOD, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO12);
+	gpio_mode_setup(GPIOD, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO12|GPIO13);
 }
 
 int main(void)
@@ -33,7 +33,7 @@ int main(void)
 	/* Blink the LED (PC8) on the board. */
 	while (1) {
 		/* Using API function gpio_toggle(): */
-		gpio_toggle(GPIOD, GPIO12);	/* LED on/off */
+		gpio_toggle(GPIOD, GPIO12|GPIO13);	/* LED on/off */
 		for (i = 0; i < 1000000; i++)	/* Wait a bit. */
 			__asm__("nop");
 	}
